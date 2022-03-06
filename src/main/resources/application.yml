@@ -1,0 +1,22 @@
+
+server:
+  port: 9090
+spring:  mvc:    view:      prefix: /WEB-INF/views/      suffix: .jsp  profiles:    active: local
+    
+  redis:
+    host: 127.0.0.1   #Redis 설치된 서버 IP
+    port: 6379        #Redis 바인드 포트
+    password:         #Redis Master 비밀번호 
+    sentinelYn: Y
+ 
+# tymeleaf  thymeleaf:    cache: false    check-template-location: true    prefix: /WEB-INF/views/    suffix: .html
+    
+# 로그 파일 경로
+logging:
+  file:
+    path: 
+      main: D:/workspace/Websocket_Chatting/logs/
+      
+chat:
+  rec:
+    enabled: false  #라이브 녹화 시 채팅 녹화 여부

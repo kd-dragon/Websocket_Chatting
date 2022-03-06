@@ -1,0 +1,18 @@
+@charset "utf-8";
+/*기본속성*/
+html {overflow-x: auto; overflow-y: scroll; font-family: sans-serif; -webkit-tap-highlight-color: transparent;}
+:root { --font-family-sans-serif: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;  --font-family-monospace: "NanumSR", "Muli", Georgia, "Times New Roman", Times, serif;}
+
+body,div,ul,li,dl,dt,dd,a,p,img,h1,h2,h3,h4,h5,hr,table,caption,thead,tr,th,td,tbody,address,cite {margin: 0px; padding: 0px; letter-spacing:-0.05em;}
+body,div,ul,li,dl,dt,dd,a,p,table,th,td,textarea,input,select {font-size: 14px; line-height: 1;  color: #373a3c; letter-spacing:-0.05em;   -webkit-font-smoothing: antialiased;  -moz-osx-font-smoothing: grayscale;}
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {font-family: "NanumSR", "Muli", Georgia, "Times New Roman", Times, serif;}
+td, th,input,select,button,p, select, input {line-height: 1;}
+#skipnavigation,.skip, hr,skip, .hidden, caption,legend {position: absolute; width: 0; height: 0; line-height: 0; overflow: hidden; visibility: hidden; font-size: 0;}/*숨김처리*/
+a:link, a:visited {text-decoration: none; color: #373a3c;}
+a:hover, a:active {text-decoration: underline; color: #3BAFDA;}
+img {border: 0;}
+button {cursor: pointer;}
+ul, li{list-style: none;}
+iframe {border: 0;}
+
+input:focus, textarea:focus, select:focus, button:focus {outline: 0;}

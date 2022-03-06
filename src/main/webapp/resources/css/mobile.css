@@ -1,0 +1,128 @@
+html {max-width: 1920px;}
+header .left-area .mobile-menu {display: none;}
+.card.personal-data{width: 50% !important;}
+
+@media only all and (max-width: 1680px) {
+
+}
+
+@media only all and (max-width: 1520px) {
+
+.search-area ul {width: 100%;}
+.btn-search {float: none; text-align: right; margin: 0 auto; width: 100%;}
+.btn-search button {text-align: center; width: 50%;}
+.search-area li {float: none; width: 100% !important;}
+.search-area li:last-child {width: 100% !important;}
+/* 항목 4 */
+.search-area .item-4 li {float: left; width: 50% !important;}
+.search-area .item-4 li:last-child {width: 25%;}
+.search-area .item-4 dt {width: 30%;}
+.search-area .item-4 dd {width: 70%;}
+}
+
+
+@media only all and (max-width: 1440px) {
+
+}
+
+@media only all and (max-width: 1336px) {
+
+}
+
+@media only all and (max-width: 1310px) {
+
+}
+
+
+@media only all and (max-width: 1280px) {
+
+.card.personal-data{width: 100% !important;}
+.text-info.small-mobile {width: 100% !important; display: block; margin-left: 0 !important; margin-top: .5rem;}
+
+/*msg-text-area*/
+.msg-text-area {display: block;}
+.msg-text-area li {clear:left; width: 100% !important; }
+.write-table.write-table-vertical th {word-break: keep-all;}
+}
+
+@media only all and (max-width: 1024px) {
+
+.write-table.system {overflow-x: auto; overflow-y:hidden;}
+.write-table.system table {width: 800px !important;}
+.msg-option > .part-list-5{ width:100% !important;}
+.msg-option > .part-list-5 li { width:100% !important;}
+
+}
+
+@media only all and (max-width: 930px) {
+
+.card-half { width: 100% !important; min-width: 0;}
+/* 항목 4 */
+.search-area .item-4 dt {width: 40%;}
+.search-area .item-4 dd {width: 60%;}
+
+.board-control-mobile.statistics {display: block;}
+.card-header-element-long.search-select.statistics {display: none;}
+
+}
+
+@media only all and (max-width: 800px) {
+header .left-area {position: fixed; top: 0; width: 100%; z-index: 10;}
+header .left-area .mobile-menu, header .left-area a {float: left;}
+header .left-area a {width: 70%;}
+header .left-area a h1 {width: 190px; margin: 0 auto;}
+header .left-area .mobile-menu {display: inline-block; background: none; color : #FFF; font-size: 1.6rem; padding: 1rem 1.5rem 1rem 1.5rem; width: 15%; border: 0; box-sizing: border-box;}
+header .left-area .mobile-menu:first-child {text-align: left;}
+header .left-area .mobile-menu:last-child {text-align: right;}
+header .left-area:after {display: block; content: ''; clear: both;}
+header:before {display: none;}
+header .right-area {display: none; position: absolute; top: 0; background: #FFF; margin-top: 58px; padding: 1.4rem 1.25rem 1.2rem 1.25rem;}
+header .right-area:before {position: absolute; left: 0; bottom:-9px; display: block; content: ''; clear: both; background: url(/resource/images/background/shadow-header-under.png) repeat-x; width: 100%; height: 9px;}
+header .right-area .notice {display: none;}
+
+article {width: 0;}
+article.switch {width: 240px;}
+article nav {width: 240px;}
+
+.container {padding: 6.55rem 1.25rem 1.5rem 1.5rem;}
+.card-header .card-header-element {position: relative; }
+.progress {padding: .2rem 0 1rem 0;}
+.progress span:after {width: 150px;}
+.with-time {position: relative;}
+.with-time .input-group-icon {position: absolute; border-left: 0;}
+.with-time input {margin-bottom: .2rem; width: 100%; border-top-right-radius:.25rem; border-bottom-right-radius:.25rem;}
+.with-time select {width: 50%;}
+
+.part-list-4 li {width: 100%; margin-right: 0; margin-bottom: .2rem;}
+.part-list-4 li:last-child {margin-bottom: 0;}
+
+.write-table.write-table-vertical th {word-break: keep-all;}
+/*
+.write-table.write-table-vertical col:nth-child(1) {width: 25%;}
+.write-table.write-table-vertical col:nth-child(2) {width: 37.5%;}
+.write-table.write-table-vertical col:nth-child(3) {width: 37.5%;}
+*/
+
+.view-table.view-table-vertical {overflow-x: auto; overflow-y:hidden;}
+.view-table.view-table-vertical table {width: 800px !important;}
+.board-table, .view-table {overflow-x: auto; overflow-y:hidden;}
+.board-table table, .view-table table {width: 800px !important;}
+
+.mobile-w-100 {width: 100% !important;}
+
+footer {padding: 1.5rem 1.25rem 1.5rem 1.5rem;}
+
+}
+
+@media only all and (max-width: 680px) {
+.search-area .item-4 li {float: left; width: 100% !important;}
+.board-control .left-box.full, .board-control .right-box.full {width: 100% !important;}
+.board-control .left-box.full .btn, .board-control .right-box.full .btn {float: left; width: 100% !important; margin-top: .2rem;}
+
+}
+
+@media only all and (max-width: 530px) {
+.board-control-mobile {display: block;}
+.card-header-element-long.search-select {display: none;}
+}
+

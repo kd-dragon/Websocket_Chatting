@@ -1,0 +1,71 @@
+@font-face{
+	font-family:"NanumGothic";
+	src:url('NanumGothic.eot');
+	src:url('NanumGothic.eot?#iefix') format('embedded-opentype'),
+	url('NanumGothic.woff') format('woff'),
+	url('NanumGothic.ttf') format('truetype');
+	url('NanumGothic.svg#NanumGothic') format('svg')
+	src:local(※), url('NanumGothic.woff') format('woff');
+}  
+
+@font-face { 
+	font-family:'NanumGB';
+	src:url('NanumGothicBold.eot');
+	src:url('NanumGothicBold.eot?#iefix') format('embedded-opentype'),
+	url('NanumGothicBold.woff') format('woff'),
+	url('NanumGothicBold.ttf') format('truetype');
+	url('NanumGothicBold.svg#NanumGothicBold') format('svg')
+	src:local(※), url('NanumGothicBold.woff') format('woff');
+}  
+
+@font-face { 
+font-family:'NanumEB';
+	src:url('NanumGothicExtraBold.eot');
+	src:url('NanumGothicExtraBold.eot?#iefix') format('embedded-opentype'),
+	url('NanumGothicExtraBold.woff') format('woff'),
+	url('NanumGothicExtraBold.ttf') format('truetype');
+	url('NanumGothicExtraBold.svg#NanumGothicExtraBold') format('svg')
+	src:local(※), url('NanumGothicExtraBold.woff') format('woff');
+}  
+
+
+
+@font-face { 
+	font-family:'NanumSL';
+	src:url('NanumSquareL.eot');
+	src:url('NanumSquareL.eot?#iefix') format('embedded-opentype'),
+	url('NanumSquareL.woff') format('woff'),
+	url('NanumSquareL.ttf') format('truetype');
+	url('NanumSquareL.svg#NanumSquareL') format('svg')
+	src:local(※), url('NanumSquareL.woff') format('woff');
+}  
+
+@font-face{
+	font-family:"NanumSR";
+	src:url('NanumSquareR.eot');
+	src:url('NanumSquareR.eot?#iefix') format('embedded-opentype'),
+	url('NanumSquareR.woff') format('woff'),
+	url('NanumSquareR.ttf') format('truetype');
+	url('NanumSquareR.svg#NanumSquareR') format('svg')
+	src:local(※), url('NanumSquareR.woff') format('woff');
+}  
+
+@font-face { 
+	font-family:'NanumSB';
+	src:url('NanumSquareB.eot');
+	src:url('NanumSquareB.eot?#iefix') format('embedded-opentype'),
+	url('NanumSquareB.woff') format('woff'),
+	url('NanumSquareB.ttf') format('truetype');
+	url('NanumSquareB.svg#NanumSquareB') format('svg')
+	src:local(※), url('NanumSquareB.woff') format('woff');
+}  
+
+@font-face { 
+font-family:'NanumSEB';
+	src:url('NanumSquareEB.eot');
+	src:url('NanumSquareEB.eot?#iefix') format('embedded-opentype'),
+	url('NanumSquareEB.woff') format('woff'),
+	url('NanumSquareEB.ttf') format('truetype');
+	url('NanumSquareEB.svg#NanumSquareEB') format('svg')
+	src:local(※), url('NanumSquareEB.woff') format('woff');
+}  

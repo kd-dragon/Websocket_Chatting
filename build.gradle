@@ -1,0 +1,45 @@
+plugins {
+	id 'org.springframework.boot' version '2.5.1'
+	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+	id 'java'
+}
+
+group = 'com.tigen.chat'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+	implementation group: 'nz.net.ultraq.thymeleaf', name: 'thymeleaf-layout-dialect'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter-websocket'
+	implementation 'org.springframework.boot:spring-boot-starter-data-redis'
+	
+	compileOnly 'org.projectlombok:lombok'
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+	annotationProcessor 'org.projectlombok:lombok'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-reactor-netty'
+	implementation group: 'org.webjars', name: 'sockjs-client', version: '1.0.2'
+	implementation 'org.apache.tomcat.embed:tomcat-embed-jasper'
+	implementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.12.3'
+
+	//Shedlock (멀티서버 - 스케줄러 중복 실행 방지용)
+	implementation group: 'net.javacrumbs.shedlock', name: 'shedlock-spring', version: '4.24.0'
+	implementation group: 'net.javacrumbs.shedlock', name: 'shedlock-provider-redis-spring', version: '4.24.0'
+	
+}
+
+test {
+	useJUnitPlatform()
+}

@@ -1,0 +1,34 @@
+@charset "utf-8";
+
+.container {display: flex; align-items: flex-start;}
+.container section {padding: 1rem; margin: 0 auto; border: 1px solid #ddd; box-sizing: border-box; border-radius: 3px;}
+.container h4 {margin-bottom: .5rem;}
+.card {width: 19.5%}
+.card-title {position: relative;}
+.title-elements {position: absolute; top: -0.5rem; right: -0.5rem;}
+.title-elements .btn {border: 1px solid #ddd; background: none; padding: .25rem .8rem;}
+.system-box {width: 59.5%;}
+.user-list, .room-list {background: #f9f9f9; padding: 1rem; height: 400px; overflow: auto; box-sizing: border-box; border-radius: 3px;}
+.user-list li, .room-list li {line-height: 1.5; margin-bottom: .5rem;}
+
+.room-box .room-list {background: #f5f5fe;}
+.video-box {display: flex; align-items: flex-start; margin-bottom: 10px;}
+.video-mine {position: relative; margin-right: 10px; width: calc(30% - 10px); overflow: hidden;}
+.video-cover {padding-top: 56.25%; }
+.video-mine img {position: absolute; top: 0; left: 0; width: 100%; min-height: 100%; }
+.video-mine video {position: absolute; top: 0; left: 0; width: 100%; min-height: 100%; }
+.video-user {width: 70%;}
+.video-user ul {}
+.video-user li {float: left; position: relative; margin-right: 5px; width: calc(20% - 5px); overflow: hidden;}
+.video-user li:nth-child(n + 6) {margin-top: 5px;}
+.video-user img {position: absolute; top: 0; left: 0; width: 100%; min-height: 100%; }
+.chat-box {background: #333; padding: 1rem; height: 300px; overflow-y: auto; box-sizing: border-box; border-radius: 3px;}
+.chat-box .chat-unit {margin-bottom: .8rem;}
+.chat-box .chat-unit .user-info {color: #FFF;}
+.chat-box .chat-unit .user-info b {margin-right: 5px;}
+.chat-box .chat-unit .user-info b:after {display: inline-block; content: ''; vertical-align: top; width: 5px; height: .85rem; border-right: 1px solid #444;}
+.chat-box .chat-unit .user-info i {font-style: normal;}
+.chat-box .chat-unit p {word-break: break-all; color: #AAA; font-size: .85rem; line-height: 1.2rem;}
+.editing-area {display: flex; border: 1px solid #ddd; margin-top: 5px;}
+.editing-area input {padding: .5rem; width: calc(100% - 100px); border: 0;}
+.editing-area .btn {width: 100px; background: #3bafda; border: 0; color: #FFF;}

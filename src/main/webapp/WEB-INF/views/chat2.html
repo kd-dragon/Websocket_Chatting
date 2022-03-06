@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+<title>채팅 테스트 0617</title>
+
+<!-- CSS&JS -->
+<link href="/resources/css/total.css" type="text/css" rel="stylesheet"  media="screen" />
+<!-- <link href="/resources/css/build.css" type="text/css" rel="stylesheet"  media="screen" /> -->
+<script src="/resources/js/jquery-3.3.1.min.js" language="javascript" type="text/javascript"></script>
+<script src="/resources/js/video.js" language="javascript" type="text/javascript"></script>
+<!--// CSS&JS -->
+
+<!-- <script src="/resources/js/chat.js"></script> -->
+<script src="/resources/js/liveChatMain.js"></script>
+<script src="/resources/js/liveChat.js"></script>
+<!-- sockjs -->
+<script src="/resources/js/sockjs.min.js"></script>
+<!-- //sockjs -->
+
+<!-- stomp -->
+<script src="/resources/js/stomp.min.js"></script>
+<!-- //stomp -->
+
+</head>
+<body>
+<!-- WebSocket:<label id="connectStatus"></label> -->
+
+<!-- container -->
+<div class="container" onload="load()">
+	<!-- <section class="card user-card" id="loginBox">
+		<div class="card-title">
+			<h4>대기</h4>
+		</div>
+		<ul class="user-list" id="waitUserList">
+			<li>userid1</li>
+		</ul>
+		<div class="editing-area">
+			<input type="text" class="" title="" value="" id="userId" onkeydown="if(event.keyCode==13) javascript:connect();"/>
+			<button type="button" class="btn" id="loginBtn" onclick="connect()">로그인</button>
+		</div>
+	</section> -->
+	
+	<!-- <section class="card room-box" id="roomBox">
+		<div class="card-title">
+			<h4>채팅방</h4>
+		</div>
+		<ul class="room-list" id="roomList">
+			<li>roomname1</li>
+		</ul>
+		<div class="editing-area">
+			<input type="text" class="" title="" value="" id="roomName"/>
+			<button type="button" class="btn" onclick="makeRoom()">만들기</button>
+		</div>
+	</section> -->
+	
+	<section class="card system-box" id="systemBox" style="display:block;">
+	<input type="hidden" id="roomKey"/>
+		<div class="card-title">
+			<h4 id="roomTitle">채팅</h4>
+			<div class="title-elements">
+				<button type="button" class="btn" onclick="roomOut()">나가기</button>
+			</div>
+		</div>
+		<div class="video-box">
+			<div class="video-mine">
+				<div class="video-cover">
+					<video autoplay="true" id="videoElement"></video>
+					<canvas id="camCanvas" style="display:none"></canvas>
+				</div>
+			</div>
+			<div class="video-user">
+				<!-- <ul class="">
+					<li>
+						<div class="video-cover">
+							<img src="http://previewnw.clipartkorea.co.kr/2018/12/12/tip014d18100695.jpg" alt=""/>
+						</div>
+					</li>
+					<li>
+						<div class="video-cover">
+							<img src="http://previewnw.clipartkorea.co.kr/2017/07/05/cm08282685.jpg" alt=""/>
+						</div>
+					</li>
+					<li>
+						<div class="video-cover">
+							<img src="http://previewnw.clipartkorea.co.kr/2017/07/05/cm08282367.jpg" alt=""/>
+						</div>
+					</li>
+					<li>
+						<div class="video-cover">
+							<img src="http://previewnw.clipartkorea.co.kr/2017/07/05/cm08279313.jpg" alt=""/>
+						</div>
+					</li>
+					<li>
+						<div class="video-cover">
+							<img src="http://previewnw.clipartkorea.co.kr/2015/10/30/cb047006828.jpg" alt=""/>
+						</div>
+					</li>
+					<li>
+						<div class="video-cover">
+							<img src="http://previewnw.clipartkorea.co.kr/2016/04/25/tip034j16030177.jpg" alt=""/>
+						</div>
+					</li>
+					<li>
+						<div class="video-cover">
+							<img src="http://previewnw.clipartkorea.co.kr/Premium/4/5/0/B0/x/pc002095630.jpg" alt=""/>
+						</div>
+					</li>
+					<li>
+						<div class="video-cover">
+							<img src="http://previewnw.clipartkorea.co.kr/Premium/4/5/0/77/f/pc002063480.jpg" alt=""/>
+						</div>
+					</li>
+					<li>
+						<div class="video-cover">
+							<img src="http://previewnw.clipartkorea.co.kr/2014/01/31/yaytg254281.jpg" alt=""/>
+						</div>
+					</li>
+					<li>
+						<div class="video-cover">
+							<img src="http://previewnw.clipartkorea.co.kr/Premium/4/5/0/75/p/pc002060832.jpg" alt=""/>
+						</div>
+					</li>
+				</ul> -->
+			</div>
+			<div class="text-left" id="totalUser" style="font-size: x-large; font-weight: bold; color: blue;"></div>
+		</div>
+		<div class="chat-box" id="chatBox">
+			<!-- <div class="chat-unit">
+				<span class="user-info"><b>userid1</b><i>2020-10-30 11:14</i></span>
+				<p>입력한 챗팅 내용이 노출되는 영역입니다.입력한 챗팅 내용이 노출되는 영역입니다.입력한 챗팅 내용이 노출되는 영역입니다.입력한 챗팅 내용이 노출되는 영역입니다.입력한 챗팅 내용이 노출되는 영역입니다.입력한 챗팅 내용이 노출되는 영역입니다.입력한 챗팅 내용이 노출되는 영역입니다.입력한 챗팅 내용이 노출되는 영역입니다.입력한 챗팅 내용이 노출되는 영역입니다.입력한 챗팅 내용이 노출되는 영역입니다.입력한 챗팅 내용이 노출되는 영역입니다.입력한 챗팅 내용이 노출되는 영역입니다.</p>
+			</div> -->
+		</div>
+		<div class="editing-area">
+			<input type="text" class="" title="" value="" id="textMessage" onkeydown="if(event.keyCode==13) javascript:sendChk();"/>
+			<button type="button" class="btn" onclick="sendChk()">전송</button>
+		</div>
+	</section>
+</div> <!--// container -->
+<footer th:text="${date}">tymeleaf Test(이 메시지는 씹히나보네요.)</footer>
+</body>
+</html>

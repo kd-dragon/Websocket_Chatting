@@ -1,0 +1,9 @@
+@charset "utf-8";
+/*placeholder*/
+::-webkit-input-placeholder{/* Webkit browsers */color: #666;}
+:-moz-placholder{/* Mozilla Firefox 4 to 18 */ color: #666;}
+::-moz-placholder{/* Mozilla Firefox 19+ */ color: #666;}
+:-ms-input-placholder{/*Internet Explorer 10+ */ color: #666;}
+
+/*새창팝업*/
+.popup {margin: 0; padding: 0; width: 100%; max-width: 100%; min-width: 100%;}

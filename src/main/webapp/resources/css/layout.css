@@ -1,0 +1,8 @@
+@charset "utf-8";
+/*layout*/
+
+header {position: relative;}
+article {position: fixed; width: 240px; overflow-y: auto; z-index: 10; height: 1440px;}
+.container {padding: 1.5rem; width: 100%; box-sizing: border-box;}
+footer {padding: 1.5rem; text-align: center; width: 100%; box-sizing: border-box;}
+

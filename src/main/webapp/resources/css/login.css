@@ -1,0 +1,34 @@
+@charset "utf-8";
+@import url("font.css");
+@import url("reset.css");
+@import url("common.css");
+
+/* Login */
+.login {background: url(/resource/images/background/bg-login.jpg) no-repeat ; background-color: #DEDDE3 ;}
+.login .container {margin-bottom: 50px;}
+.card {background: #FFF; border-radius: .25rem; -webkit-box-shadow: 0 10px 18px 0 rgba(62, 57, 107, 0.2); -moz-box-shadow: 0 10px 18px 0 rgba(62, 57, 107, 0.2); box-shadow: 0 10px 18px 0 rgba(62, 57, 107, 0.2);}
+.login-area {width: 30%; min-width: 490px; padding: 40px; margin: 120px auto 60px auto; box-sizing: border-box;}
+.login-area h1.logo-box {text-align: center;}
+.login-area h1.logo-box span, .login-area h1.logo-box small {display: block; line-height: 1;}
+.login-area h1.logo-box span {font-size: 1.5rem;}
+.login-area h1.logo-box small {font-size: 1rem; font-weight: normal;}
+.login-area .login-input {border-radius: .25rem;}
+.login-area .login-input li {padding: .5rem; border: 1px solid #D4D4D4;border-radius: .25rem;}
+.login-area .login-input li:first-child {border-bottom-left-radius: 0; border-bottom-right-radius: 0;}
+.login-area .login-input li:last-child {border-top-left-radius: 0; border-top-right-radius: 0;}
+.login-area .login-input li + li {margin-top:-1px;}
+.login-area .login-input label {width: 5%;}
+.login-area .login-input input {font-size: 12px; letter-spacing: 0; border: 0; color: #222; padding: .5rem; width: 95%; box-sizing: border-box;}
+.login-area .login-input input[type=password] {font-family: 'dotum';}
+.login footer {text-align: center;}
+.login footer span {display: block; line-height: 1.5rem;}
+.login .btn-login {background: #3BAFDA; font-size: 1.05rem; color: #FFF; text-align: center; padding: .7rem 0; width: 100%; border: 0; border-radius: .25rem;}
+
+/* Footer */
+footer p span.text-right {text-align: center !important;}
+
+
+@media only all and (max-width: 800px) {
+.login-area {min-width: 90%;}
+.login-area .login-input input {width: 90%;}
+}

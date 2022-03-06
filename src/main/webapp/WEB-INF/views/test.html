@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<script src="/resources/js/liveChatMain.js"></script>
+<!-- sockjs -->
+<script src="/resources/js/sockjs.min.js"></script>
+<!-- //sockjs -->
+
+<!-- stomp -->
+<script src="/resources/js/stomp.min.js"></script>
+<!-- //stomp -->
+<body>
+<div class="card-body">
+						<!-- 탭 영역 -->
+							<div class="tab-content">
+								<!-- 실시간 라이브 방송 탭 내용 -->
+								<div class="tab-pane active">
+									<!-- 버튼영역 -->
+									<div class="listTop-btnArea">
+										<div class="d-inline">
+											<button type="button" class="btn btn-sm btn-primary" onclick="window.open('live-write.jsp','_self');"><i class="ft-tv"></i> 라이브방송 등록</button>
+										</div>
+										<div class="position-absolute no-edge-top no-edge-right">
+											<button type="button" class="btn btn-sm btn-info">라이브 목록 다운로드</button>
+										</div>
+									</div>
+									<!--// 버튼영역 -->
+									<!-- 리스트 요약 영역 -->
+									<div class="list-summary d-flex justify-content-between  ">
+										<div class="list-count">
+											전체 : <b>5</b>건
+										</div>
+										<div class="list-count right list-status">
+											<span><a href="#" class="active"><i class="fa fa-circle grey"></i>전체(30)</a></span>
+											<span><a href="#"><i class="fa fa-circle danger"></i>LIVE(15)</a></span>
+											<span><a href="#"><i class="fa fa-circle warning"></i>스트리밍 오류(14)</a></span>
+											<span><a href="#"><i class="fa fa-circle black"></i>스트리밍 일시중지(1)</a></span>
+										</div>
+									</div>
+									<!--// 리스트 요약 영역 -->
+									
+									<!-- 리스트 영역 -->
+									<ul class="onair-list">
+										<!-- 라이브 방송이 없을 경우
+										<li class="text-center py-4">
+											<b>실시간 라이브 방송이 없습니다.</b>
+										</li>
+										-->
+										<li onclick="connect();">
+											<!-- img-box -->
+											<div class="img-box">
+												<!-- state-box -->
+												<div class="state-box">
+													<span class="badge badge-secondary">채널 CH01</span><span class="badge badge-danger eng-text">LIVE</span>
+												</div> <!--// state-box -->
+												<!-- img-box-cover -->
+												<div class="img-box-cover">
+													<img src="/_wp/_admin/app-assets/images/sample/thumb/sample1.jpg" alt="">
+												</div> <!--// img-box-cover -->
+
+												<!-- 영상 vod 없을 시
+												<div class="no-live">
+													<div class="no-live-content">
+														<i class="ft-alert-triangle d-block"></i><span>저장된 방송 콘텐츠가 없습니다.</span>
+													</div>
+												</div> -->
+
+											</div> <!--// img-box -->
+											<dl class="">
+												<dd class="category"><span>한반도이야기</span><span>관광정보</span><span>추천여행코스</span></dd>
+												<dt>방송 제목이 노출됩니다.</dt>
+												<dd class="comment">실시간 라이브 방송 중인 방송의 설명이 노출됩니다. 실시간 라이브 방송 중인 방송의 설명이 노출됩니다. 실시간 라이브 방송 중인 방송의 설명이 노출됩니다.실시간 라이브 방송 중인 방송의 설명이 노출됩니다. 실시간 라이브 방송 중인 방송의 설명이 노출됩니다. 실시간 라이브 방송 중인 방송의 설명이 노출됩니다.실시간 라이브 방송 중인 방송의 설명이 노출됩니다. 실시간 라이브 방송 중인 방송의 설명이 노출됩니다. 실시간 라이브 방송 중인 방송의 설명이 노출됩니다.</dd>
+												<dd><span class="badge badge-info mr-Half">방송일시</span>2020.12.25 08:45 ~ 2020.12.25 17:45</dd>
+												<dd><span class="badge badge-info mr-Half">방송시간</span><b>20분</b> / 03시간 25분</dd>
+												<dd><span class="badge badge-info badge-width-sp-4 mr-Half">등록자</span>tg01</dd>
+											</dl>
+										</li>
+										<li onclick="window.open('live-onair-view.jsp','_self');">
+											<!-- img-box -->
+											<div class="img-box">
+												<!-- state-box -->
+												<div class="state-box">
+													<span class="badge badge-secondary">채널 CH02</span><span class="badge badge-danger eng-text">LIVE</span>
+												</div> <!--// state-box -->
+												<!-- img-box-cover -->
+												<div class="img-box-cover">
+													<img src="/_wp/_admin/app-assets/images/sample/sample_player01.png" alt="">
+												</div> <!--// img-box-cover -->
+											</div> <!--// img-box -->
+											<dl class="">
+												<dd class="category"><span>한반도이야기</span><span>관광정보</span><span>추천여행코스</span></dd>
+												<dt>방송 제목이 노출됩니다.</dt>
+												<dd class="comment">실시간 라이브 방송 중인 방송의 설명이 노출됩니다. 실시간 라이브 방송 중인 방송의 설명이 노출됩니다. 실시간 라이브 방송 중인 방송의 설명이 노출됩니다.실시간 라이브 방송 중인 방송의 설명이 노출됩니다. 실시간 라이브 방송 중인 방송의 설명이 노출됩니다. 실시간 라이브 방송 중인 방송의 설명이 노출됩니다.실시간 라이브 방송 중인 방송의 설명이 노출됩니다. 실시간 라이브 방송 중인 방송의 설명이 노출됩니다. 실시간 라이브 방송 중인 방송의 설명이 노출됩니다.</dd>
+												<dd><span class="badge badge-info mr-Half">방송일시</span>2020.12.25 08:45 ~ 2020.12.25 17:45</dd>
+												<dd><span class="badge badge-info mr-Half">방송시간</span><b>20분</b> / 03시간 25분</dd>
+												<dd><span class="badge badge-info badge-width-sp-4 mr-Half">등록자</span>tg01</dd>
+											</dl>
+										</li>
+										<li onclick="window.open('live-onair-view.jsp','_self');">
+											<!-- img-box -->
+											<div class="img-box">
+												<!-- state-box -->
+												<div class="state-box">
+													<span class="badge badge-secondary">채널 CH05</span><span class="badge badge-danger eng-text">LIVE</span>
+												</div> <!--// state-box -->
+												<!-- img-box-cover -->
+												<div class="img-box-cover">
+													<img src="/_wp/_admin/app-assets/images/sample/sample_player01.png" alt="">
+												</div> <!--// img-box-cover -->
+											</div> <!--// img-box -->
+											<dl class="">
+												<dd class="category"><span>한반도이야기</span><span>관광정보</span><span>추천여행코스</span></dd>
+												<dt>방송 제목이 노출됩니다.</dt>
+												<dd class="comment">실시간 라이브 방송 중인 방송의 설명이 노출됩니다. 실시간 라이브 방송 중인 방송의 설명이 노출됩니다. 실시간 라이브 방송 중인 방송의 설명이 노출됩니다.실시간 라이브 방송 중인 방송의 설명이 노출됩니다. 실시간 라이브 방송 중인 방송의 설명이 노출됩니다. 실시간 라이브 방송 중인 방송의 설명이 노출됩니다.실시간 라이브 방송 중인 방송의 설명이 노출됩니다. 실시간 라이브 방송 중인 방송의 설명이 노출됩니다. 실시간 라이브 방송 중인 방송의 설명이 노출됩니다.</dd>
+												<dd><span class="badge badge-info mr-Half">방송일시</span>2020.12.25 08:45 ~ 2020.12.25 17:45</dd>
+												<dd><span class="badge badge-info mr-Half">방송시간</span><b>20분</b> / 03시간 25분</dd>
+												<dd><span class="badge badge-info badge-width-sp-4 mr-Half">등록자</span>tg01</dd>
+											</dl>
+										</li>
+										<li onclick="window.open('live-onair-view.jsp','_self');">
+											<!-- img-box -->
+											<div class="img-box">
+												<!-- state-box -->
+												<div class="state-box">
+													<span class="badge badge-gray eng-text">VOD</span><span class="badge badge-dark">스트리밍 일시 중지</span>
+												</div> <!--// state-box -->
+												<!-- img-box-cover -->
+												<div class="img-box-cover">
+													<img src="/_wp/_admin/app-assets/images/sample/sample_player01.png" alt="">
+												</div> <!--// img-box-cover -->
+											</div> <!--// img-box -->
+											<dl class="">
+												<dd class="category"><span>한반도이야기</span><span>관광정보</span><span>추천여행코스</span></dd>
+												<dt>방송 제목이 노출됩니다.</dt>
+												<dd class="comment">실시간 라이브 방송 중인 방송의 설명이 노출됩니다. 실시간 라이브 방송 중인 방송의 설명이 노출됩니다. 실시간 라이브 방송 중인 방송의 설명이 노출됩니다.실시간 라이브 방송 중인 방송의 설명이 노출됩니다. 실시간 라이브 방송 중인 방송의 설명이 노출됩니다. 실시간 라이브 방송 중인 방송의 설명이 노출됩니다.실시간 라이브 방송 중인 방송의 설명이 노출됩니다. 실시간 라이브 방송 중인 방송의 설명이 노출됩니다. 실시간 라이브 방송 중인 방송의 설명이 노출됩니다.</dd>
+												<dd><span class="badge badge-info mr-Half">방송일시</span>2020.12.25 08:45 ~ 2020.12.25 17:45</dd>
+												<dd><span class="badge badge-info mr-Half">방송시간</span><b>20분</b> / 03시간 25분</dd>
+												<dd><span class="badge badge-info badge-width-sp-4 mr-Half">등록자</span>tg01</dd>
+											</dl>
+										</li>
+										<li onclick="window.open('live-onair-view.jsp','_self');">
+											<!-- img-box -->
+											<div class="img-box">
+												<!-- state-box -->
+												<div class="state-box">
+													<span class="badge badge-secondary">채널 CH03</span><span class="badge badge-warning">스트리밍 오류</span>
+												</div> <!--// state-box -->
+												<!-- img-box-cover -->
+												<div class="img-box-cover">
+													<img src="/_wp/_admin/app-assets/images/sample/sample_player01.png" alt="">
+												</div> <!--// img-box-cover -->
+											</div> <!--// img-box -->
+											<dl class="">
+												<dd class="category"><span>한반도이야기</span><span>관광정보</span><span>추천여행코스</span></dd>
+												<dt>방송 제목이 노출됩니다.</dt>
+												<dd class="comment">실시간 라이브 방송 중인 방송의 설명이 노출됩니다. 실시간 라이브 방송 중인 방송의 설명이 노출됩니다. 실시간 라이브 방송 중인 방송의 설명이 노출됩니다.실시간 라이브 방송 중인 방송의 설명이 노출됩니다. 실시간 라이브 방송 중인 방송의 설명이 노출됩니다. 실시간 라이브 방송 중인 방송의 설명이 노출됩니다.실시간 라이브 방송 중인 방송의 설명이 노출됩니다. 실시간 라이브 방송 중인 방송의 설명이 노출됩니다. 실시간 라이브 방송 중인 방송의 설명이 노출됩니다.</dd>
+												<dd><span class="badge badge-info mr-Half">방송일시</span>2020.12.25 08:45 ~ 2020.12.25 17:45</dd>
+												<dd><span class="badge badge-info mr-Half">방송시간</span><b>20분</b> / 03시간 25분</dd>
+												<dd><span class="badge badge-info badge-width-sp-4 mr-Half">등록자</span>tg01</dd>
+											</dl>
+										</li>
+									</ul>
+									<!--// 리스트 영역 -->
+								</div>
+								<!--// 실시간 라이브 방송 탭 내용 -->
+							</div>
+						<!--// 탭영역 -->
+					</div>
+</body>
+</html>
